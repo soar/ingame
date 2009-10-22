@@ -1,0 +1,150 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{692627A7-9953-4D3E-A62B-85C86BDEBB1F}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>InGame.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='No DFM' or '$(Cfg_3)'!=''">
+			<Cfg_3>true</Cfg_3>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_OutputDRCFile>true</DCC_OutputDRCFile>
+			<DCC_UsePackage>vclx;vcl;dbrtl;Rave76VCL;bdertl;rtl;vclactnband;xmlrtl;vcldb;vcldbx;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_120;Intraweb_100_120;VclSmp;vclie;websnap;webdsnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DataSnapServer;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;bsfd2009;tmsd2009;tmsexd2009;CoolTrayIcon_D120;acnt2009_R;dclZipForged11;vclZipForged12;tmswizd2009;tmsxlsd2009;TeeWorld812;TeeImage812;TeeLanguage812;TeePro812;TeeGL812;TeeUI812;TeeDB812;Tee812;TeeTree2D12Tee8;AnyDAC_PhysSQLite_D12;AnyDAC_Phys_D12;AnyDAC_ComI_D12;AnyDAC_PhysPg_D12;AnyDAC_PhysIB_D12;AnyDAC_PhysTDBX_D12;AnyDAC_PhysADS_D12;AnyDAC_PhysODBC_D12;AnyDAC_PhysASA_D12;AnyDAC_PhysOracl_D12;AnyDAC_PhysMySQL_D12;AnyDAC_PhysDb2_D12;AnyDAC_PhysMSSQL_D12;AnyDAC_PhysMSAcc_D12;AnyDAC_GUIxForms_D12;AnyDAC_Comp_D12;advchartd2009;dacvcl120;dac120;CRControls120;mydacvcl120;mydac120;mysqlmon120;RemObjects_WebBroker_D12;RemObjects_RODX_D12;RemObjects_BPDX_D12;RemObjects_Synapse_D12;RemObjects_Indy_D12</DCC_UsePackage>
+			<DCC_ExeOutput>builds\</DCC_ExeOutput>
+			<BRCC_OutputDir>resourses\</BRCC_OutputDir>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_DependencyCheckOutputName>builds\InGame.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_Platform>x86</DCC_Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_StringChecks>off</DCC_StringChecks>
+			<DCC_Description>InGame</DCC_Description>
+			<DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
+			<DCC_ImportedDataReferences>false</DCC_ImportedDataReferences>
+			<DCC_IOChecking>false</DCC_IOChecking>
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;ReleaseMode;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_3)'!=''">
+			<DCC_Define>NoDFM;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_DebugDCUs>true</DCC_DebugDCUs>
+			<DCC_MapFile>3</DCC_MapFile>
+			<DCC_RangeChecking>true</DCC_RangeChecking>
+			<DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<DCC_Define>DEBUG;DebugMode;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="InGame.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="_system\units\UOneInstance.pas"/>
+			<DCCReference Include="_system\units\vars.pas"/>
+			<DCCReference Include="_system\forms\WMain.pas">
+				<Form>FMain</Form>
+			</DCCReference>
+			<DCCReference Include="_system\forms\WLauncher.pas">
+				<Form>FLauncher</Form>
+			</DCCReference>
+			<DCCReference Include="_system\forms\WSettings.pas">
+				<Form>FSettings</Form>
+			</DCCReference>
+			<DCCReference Include="_system\units\USettings.pas"/>
+			<DCCReference Include="_system\units\UCmdLine.pas"/>
+			<DCCReference Include="_system\units\UGraphic.pas"/>
+			<DCCReference Include="_system\units\formtools\ULocalization.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="No DFM">
+				<Key>Cfg_3</Key>
+				<CfgParent>Cfg_1</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+						<Parameters Name="RunParams">-test --silent -var 5 -test N</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">84</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">True</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">SevStar, Inc. - http://sevstar.net</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Утилита проекта SevGames.net - http://sevgames.net</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.0.0.84</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright">Soar, http://soar.name</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductName">InGame Tool</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments">Visit http://sevgames.net for more info</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k120.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp120.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k120.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp120.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcltee8120.bpl">TeeChart Standard 8 Components</Excluded_Packages>
+					</Excluded_Packages>
+					<Source>
+						<Source Name="MainSource">InGame.dpr</Source>
+					</Source>
+				</Delphi.Personality>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

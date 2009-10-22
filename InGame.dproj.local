@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.03.23 20:54:26.677.dproj,E:\[Documents]\RAD Studio\Projects\Project1.dproj=E:\[Documents]\RAD Studio\Projects\InGame.dproj</Transaction>
+    <Transaction>2009.03.23 20:55:18.849.dproj,E:\[Documents]\RAD Studio\Projects\InGame.dproj=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\InGame.dproj</Transaction>
+    <Transaction>2009.03.23 20:57:51.209.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Unit1.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Test\Unit1.pas</Transaction>
+    <Transaction>2009.03.23 20:57:51.209.dfm,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Unit1.dfm=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Test\Unit1.dfm</Transaction>
+    <Transaction>2009.03.23 21:01:37.693.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Unit1.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\Unit1.pas</Transaction>
+    <Transaction>2009.03.23 21:01:37.693.dfm,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Unit1.dfm=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\Unit1.dfm</Transaction>
+    <Transaction>2009.03.23 21:02:20.271.dproj,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\InGame.dproj=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\main.dproj</Transaction>
+    <Transaction>2009.03.23 21:02:55.693.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\Unit1.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wMain.pas</Transaction>
+    <Transaction>2009.03.23 21:02:55.693.dfm,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\Unit1.dfm=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wMain.dfm</Transaction>
+    <Transaction>2009.03.23 21:03:10.052.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wMain.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wqMain.pas</Transaction>
+    <Transaction>2009.03.23 21:03:10.052.dfm,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wMain.dfm=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wqMain.dfm</Transaction>
+    <Transaction>2009.03.23 21:03:14.474.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wqMain.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WMain.pas</Transaction>
+    <Transaction>2009.03.23 21:03:14.474.dfm,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\wqMain.dfm=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WMain.dfm</Transaction>
+    <Transaction>2009.03.23 21:04:10.209.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WMain.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WRun.pas</Transaction>
+    <Transaction>2009.03.23 21:04:10.209.dfm,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WMain.dfm=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WRun.dfm</Transaction>
+    <Transaction>2009.03.23 21:07:54.880.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Unit1.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\units\vars.pas</Transaction>
+    <Transaction>2009.03.23 21:08:12.662.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\units\vars.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\units\vars.pas</Transaction>
+    <Transaction>2009.03.23 21:12:42.912.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WRun.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WLauncher.pas</Transaction>
+    <Transaction>2009.03.23 21:12:42.912.dfm,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WRun.dfm=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\forms\WLauncher.dfm</Transaction>
+    <Transaction>2009.03.23 21:52:42.052.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\Unit1.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\units\settings.pas</Transaction>
+    <Transaction>2009.03.23 22:10:47.912.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\units\settings.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\units\qsettings.pas</Transaction>
+    <Transaction>2009.03.23 22:10:53.224.pas,E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\units\qsettings.pas=E:\[Documents]\[Data]\[Delphi]\Projects 2009\InGame\_system\units\USettings.pas</Transaction>
+    <Transaction>2009.06.29 00:08:07.484.pas,E:\[Development]\_Delphi\_Projects\InGame\Unit1.pas=E:\[Development]\_Delphi\_Projects\InGame\_system\units\UCmdLine.pas</Transaction>
+    <Transaction>2009.06.29 10:09:56.328.dproj,E:\[Development]\_Delphi\_Projects\InGame\main.dproj=E:\[Development]\_Delphi\_Projects\InGame\InGame.dproj</Transaction>
+    <Transaction>2009.07.15 20:36:06.031.pas,E:\[Development]\_Delphi\_Projects\InGame\Unit1.pas=E:\[Development]\_Delphi\_Projects\InGame\_system\units\UGraphic.pas</Transaction>
+    <Transaction>2009.07.18 15:04:04.078.pas,E:\[Development]\_Delphi\_Projects\InGame\Unit1.pas=E:\[Development]\_Delphi\_Projects\InGame\_system\forms\WMain.pas</Transaction>
+    <Transaction>2009.07.18 15:04:04.078.dfm,E:\[Development]\_Delphi\_Projects\InGame\Unit1.dfm=E:\[Development]\_Delphi\_Projects\InGame\_system\forms\WMain.dfm</Transaction>
+    <Transaction>2009.07.18 19:09:11.645.pas,E:\[Development]\_Delphi\_Projects\InGame\Unit1.pas=E:\[Development]\_Delphi\_Projects\InGame\_system\units\UOneInstance.pas</Transaction>
+    <Transaction>2009.07.29 15:07:24.343,E:\[Development]\_Delphi\_Projects\InGame\_system\forms\IGMainForm=</Transaction>
+    <Transaction>2009.09.19 20:47:56.937.pas,E:\[Development]\_Delphi\_Projects\InGame\Unit1.pas=E:\[Development]\_Delphi\_Projects\InGame\_system\forms\WSettings.pas</Transaction>
+    <Transaction>2009.09.19 20:47:56.937.dfm,E:\[Development]\_Delphi\_Projects\InGame\Unit1.dfm=E:\[Development]\_Delphi\_Projects\InGame\_system\forms\WSettings.dfm</Transaction>
+    <Transaction>2009.10.11 15:04:00.250.png,E:\[Development]\_Delphi\_Projects\InGame\_resourses\images\imgGamesIconsX32\bf2.png=</Transaction>
+    <Transaction>2009.10.11 17:26:11.015.pas,E:\[Development]\_Delphi\_Projects\InGame\Unit1.pas=E:\[Development]\_Delphi\_Projects\InGame\ULocalization.pas</Transaction>
+    <Transaction>2009.10.11 17:38:58.156.pas,E:\[Development]\_Delphi\_Projects\InGame\ULocalization.pas=E:\[Development]\_Delphi\_Projects\InGame\_system\units\formtools\ULocalization.pas</Transaction>
+  </Transactions>
+</BorlandProject>
