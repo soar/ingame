@@ -6,23 +6,26 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, sSkinProvider, ComCtrls, sPageControl, StdCtrls, Mask, sMaskEdit, sCustomComboEdit,
   sTooledit, sLabel, ExtCtrls, sPanel, sTreeView, sGroupBox, Buttons, sSpeedButton, acAlphaHints,
-  sRadioButton, sEdit, sComboBox, sFileCtrl;
+  sRadioButton, sEdit, sComboBox, sFileCtrl, sCheckBox;
 
 type
     TFSettings = class(TForm)
         sSkinProvider: TsSkinProvider;
         pagesSettings: TsPageControl;
             pageBF2: TsTabSheet;
-                labelPageCaption: TsLabelFX;
-                grpPaths: TsGroupBox;
-                    editBF2Exe: TsFilenameEdit;
-                grpParams: TsGroupBox;
-                    labelParamsInfo: TsLabel;
-                    rbUseCustomParams: TsRadioButton;
-                    rbUseSettings: TsRadioButton;
-                    editPlayerName: TsEdit;
-                    editPlayerPassword: TsEdit;
-                    editCustomParams: TsEdit;
+                BF2_labelPageCaption: TsLabelFX;
+                BF2_grpPaths: TsGroupBox;
+                    BF2_editExePath: TsFilenameEdit;
+                    BF2_cbRunWithUpdate: TsCheckBox;
+                    BF2_cbOptimizeForPing: TsCheckBox;
+                BF2_grpParams: TsGroupBox;
+                    BF2_labelParamsInfo: TsLabel;
+                    BF2_rbNotUseParams: TsRadioButton;
+                    BF2_rbUseCustomParams: TsRadioButton;
+                        BF2_editCustomParams: TsEdit;
+                    BF2_rbUseSettings: TsRadioButton;
+                        BF2_editPlayerName: TsEdit;
+                        BF2_editPlayerPassword: TsEdit;
             pageCOD4: TsTabSheet;
             pageCS: TsTabSheet;
             pageWOW: TsTabSheet;
@@ -30,7 +33,8 @@ type
         sSpeedButton1: TsSpeedButton;
         sAlphaHints: TsAlphaHints;
 
-        procedure FormCreate(Sender: TObject);
+        // Применение настроек при создании формы
+        procedure FormCreate (Sender: TObject);
         // Отрисовка иконок и названий на горизонтальных табах
         procedure pagesSettingsDrawTab (Control: TCustomTabControl; TabIndex: Integer; const Rect: TRect; Active: Boolean);
         // Динамическое изменение полей ввода в зависимости от настройки
@@ -48,6 +52,7 @@ uses
 
 {$R *.dfm}
 
+// Применение настроек при создании формы
 procedure TFSettings.FormCreate(Sender: TObject);
 begin
     sAlphaHints.Templates := FMain.sAlphaHints.Templates;
@@ -84,9 +89,9 @@ end;
 // Динамическое изменение полей ввода в зависимости от настройки
 procedure TFSettings.settingsChangeParamsMethod (Sender: TObject);
 begin
-    editCustomParams.Enabled := rbUseCustomParams.Checked;
-    editPlayerName.Enabled := rbUseSettings.Checked;
-    editPlayerPassword.Enabled := rbUseSettings.Checked;
+    BF2_editCustomParams.Enabled := BF2_rbUseCustomParams.Checked and not BF2_rbNotUseParams.Checked;
+    BF2_editPlayerName.Enabled := BF2_rbUseSettings.Checked and not BF2_rbNotUseParams.Checked;
+    BF2_editPlayerPassword.Enabled := BF2_rbUseSettings.Checked and not BF2_rbNotUseParams.Checked;
 end;
 
 end.

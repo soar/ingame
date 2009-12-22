@@ -3,8 +3,8 @@ object FSettings: TFSettings
   Top = 0
   BorderStyle = bsSingle
   Caption = 'InGame: '#1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1080#1075#1088
-  ClientHeight = 626
-  ClientWidth = 596
+  ClientHeight = 470
+  ClientWidth = 600
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object FSettings: TFSettings
   PixelsPerInch = 96
   TextHeight = 13
   object sSpeedButton1: TsSpeedButton
-    Left = 445
-    Top = 398
+    Left = 461
+    Top = 409
     Width = 113
     Height = 33
     Caption = #1047#1072#1082#1088#1099#1090#1100
@@ -27,14 +27,14 @@ object FSettings: TFSettings
   end
   object pagesSettings: TsPageControl
     AlignWithMargins = True
-    Left = 5
-    Top = 5
-    Width = 586
-    Height = 324
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
+    Left = 0
+    Top = 0
+    Width = 600
+    Height = 396
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
     ActivePage = pageBF2
     Align = alTop
     Images = FMain.imgGamesIconsX32
@@ -47,6 +47,9 @@ object FSettings: TFSettings
     TabWidth = 46
     OnDrawTab = pagesSettingsDrawTab
     SkinData.SkinSection = 'PAGECONTROL'
+    ExplicitLeft = 5
+    ExplicitTop = 5
+    ExplicitWidth = 590
     object pageBF2: TsTabSheet
       Hint = '<b>Battlefield 2</b><br />'#1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1076#1083#1103' Battlefield 2'
       Caption = 'Battlefield 2'
@@ -54,11 +57,12 @@ object FSettings: TFSettings
       ShowHint = False
       SkinData.CustomColor = False
       SkinData.CustomFont = False
-      object labelPageCaption: TsLabelFX
+      ExplicitWidth = 442
+      object BF2_labelPageCaption: TsLabelFX
         AlignWithMargins = True
         Left = 8
         Top = 5
-        Width = 425
+        Width = 439
         Height = 25
         Margins.Left = 8
         Margins.Top = 5
@@ -87,33 +91,34 @@ object FSettings: TFSettings
         ExplicitTop = 144
         ExplicitWidth = 145
       end
-      object grpPaths: TsGroupBox
+      object BF2_grpPaths: TsGroupBox
         AlignWithMargins = True
         Left = 8
         Top = 35
-        Width = 425
-        Height = 62
+        Width = 439
+        Height = 106
         Margins.Left = 8
         Margins.Top = 0
         Margins.Right = 5
         Margins.Bottom = 5
         Align = alTop
-        Caption = #1055#1091#1090#1100' '#1082' '#1080#1075#1088#1077
+        Caption = #1047#1072#1087#1091#1089#1082' '#1080' '#1087#1091#1090#1080
         TabOrder = 0
         CaptionYOffset = 5
         SkinData.SkinSection = 'GROUPBOX'
         CaptionSkin = 'PANEL'
-        object editBF2Exe: TsFilenameEdit
+        ExplicitWidth = 429
+        object BF2_editExePath: TsFilenameEdit
           AlignWithMargins = True
-          Left = 162
+          Left = 157
           Top = 25
-          Width = 256
+          Width = 275
           Height = 21
           Hint = 
             '<b>'#1055#1091#1090#1100' '#1082' '#1079#1072#1087#1091#1089#1082#1072#1077#1084#1086#1084#1091' '#1092#1072#1081#1083#1091' '#1080#1075#1088#1099'</b><br />'#1059#1082#1072#1078#1080#1090#1077' '#1087#1091#1090#1100' '#1082' '#1079#1072#1087#1091#1089#1082 +
             #1072#1077#1084#1086#1084#1091' '#1092#1072#1081#1083#1091' '#1080#1075#1088#1099'. '#1069#1090#1086#1090' '#1087#1091#1090#1100' '#1073#1091#1076#1077#1090' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100#1089#1103' '#1076#1083#1103' '#1079#1072#1087#1091#1089#1082#1072' '#1080#1075 +
             #1088#1086#1074#1086#1075#1086' '#1082#1083#1080#1077#1085#1090#1072'.'
-          Margins.Left = 160
+          Margins.Left = 155
           Margins.Top = 5
           Margins.Right = 5
           Margins.Bottom = 5
@@ -149,14 +154,56 @@ object FSettings: TFSettings
           DirectInput = False
           Filter = #1047#1072#1087#1091#1089#1082#1072#1077#1084#1099#1081' '#1092#1072#1081#1083' '#1080#1075#1088#1099' - BF2.exe|BF2.exe'
           DialogOptions = [ofPathMustExist, ofFileMustExist, ofNoNetworkButton, ofEnableSizing]
+          ExplicitWidth = 265
+        end
+        object BF2_cbRunWithUpdate: TsCheckBox
+          AlignWithMargins = True
+          Left = 7
+          Top = 56
+          Width = 425
+          Height = 19
+          Margins.Left = 5
+          Margins.Top = 5
+          Margins.Right = 5
+          Margins.Bottom = 5
+          Caption = #1040#1074#1090#1086#1084#1072#1090#1080#1095#1077#1089#1082#1080' '#1086#1073#1085#1086#1074#1083#1103#1090#1100' '#1087#1088#1080' '#1079#1072#1087#1091#1089#1082#1077' ('#1088#1077#1082#1086#1084#1077#1085#1076#1091#1077#1090#1089#1103' '#1074#1082#1083#1102#1095#1080#1090#1100')'
+          Align = alTop
+          Checked = True
+          State = cbChecked
+          TabOrder = 1
+          SkinData.SkinSection = 'CHECKBOX'
+          ImgChecked = 0
+          ImgUnchecked = 0
+          ExplicitWidth = 415
+        end
+        object BF2_cbOptimizeForPing: TsCheckBox
+          AlignWithMargins = True
+          Left = 7
+          Top = 80
+          Width = 425
+          Height = 19
+          Margins.Left = 5
+          Margins.Top = 0
+          Margins.Right = 5
+          Margins.Bottom = 5
+          Caption = #1054#1087#1090#1080#1084#1080#1079#1080#1088#1086#1074#1072#1090#1100' '#1087#1086#1076' '#1087#1080#1085#1075
+          Align = alTop
+          AutoSize = False
+          Checked = True
+          State = cbChecked
+          TabOrder = 2
+          SkinData.SkinSection = 'CHECKBOX'
+          ImgChecked = 0
+          ImgUnchecked = 0
+          ExplicitWidth = 415
         end
       end
-      object grpParams: TsGroupBox
+      object BF2_grpParams: TsGroupBox
         AlignWithMargins = True
         Left = 8
-        Top = 102
-        Width = 425
-        Height = 203
+        Top = 146
+        Width = 439
+        Height = 227
         Margins.Left = 8
         Margins.Top = 0
         Margins.Right = 5
@@ -167,14 +214,15 @@ object FSettings: TFSettings
         CaptionYOffset = 5
         SkinData.SkinSection = 'GROUPBOX'
         CaptionSkin = 'PANEL'
-        object labelParamsInfo: TsLabel
+        ExplicitWidth = 429
+        object BF2_labelParamsInfo: TsLabel
           AlignWithMargins = True
           Left = 7
-          Top = 22
-          Width = 411
+          Top = 24
+          Width = 425
           Height = 24
           Margins.Left = 5
-          Margins.Top = 2
+          Margins.Top = 4
           Margins.Right = 5
           Margins.Bottom = 5
           Align = alTop
@@ -190,12 +238,13 @@ object FSettings: TFSettings
           Font.Name = 'Tahoma'
           Font.Style = []
           ExplicitTop = 25
+          ExplicitWidth = 411
         end
-        object rbUseCustomParams: TsRadioButton
+        object BF2_rbUseCustomParams: TsRadioButton
           AlignWithMargins = True
           Left = 7
-          Top = 56
-          Width = 411
+          Top = 87
+          Width = 425
           Height = 19
           Hint = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1089#1086#1073#1089#1090#1074#1077#1085#1085#1099#1077' '#1085#1072#1089#1090#1088#1086#1081#1082#1080' '#1082#1086#1084#1072#1085#1076#1085#1086#1081' '#1089#1090#1088#1086#1082#1080
           Margins.Left = 5
@@ -204,21 +253,20 @@ object FSettings: TFSettings
           Margins.Bottom = 5
           Align = alTop
           Caption = #1042#1074#1077#1089#1090#1080' '#1074#1088#1091#1095#1085#1091#1102
-          Checked = True
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
-          TabStop = True
           OnClick = settingsChangeParamsMethod
           AutoSize = False
           SkinData.SkinSection = 'RADIOBUTTON'
           ShowFocus = False
+          ExplicitWidth = 415
         end
-        object rbUseSettings: TsRadioButton
+        object BF2_rbUseSettings: TsRadioButton
           AlignWithMargins = True
           Left = 7
-          Top = 111
-          Width = 411
+          Top = 142
+          Width = 425
           Height = 19
           Hint = #1048#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1086#1087#1094#1080#1080
           Margins.Left = 5
@@ -234,16 +282,19 @@ object FSettings: TFSettings
           AutoSize = False
           SkinData.SkinSection = 'RADIOBUTTON'
           ShowFocus = False
+          ExplicitWidth = 415
         end
-        object editCustomParams: TsEdit
+        object BF2_editCustomParams: TsEdit
           AlignWithMargins = True
           Left = 27
-          Top = 80
-          Width = 391
+          Top = 111
+          Width = 405
           Height = 21
           Hint = 
-            '<b>'#1042#1074#1077#1076#1080#1090#1077' '#1087#1072#1088#1072#1084#1077#1090#1088#1099'</b><br /><b>+joinServer bf2.sevstar.net</b>' +
-            ' - '#1087#1086#1076#1082#1083#1102#1095#1080#1090#1100#1089#1103' '#1082' '#1089#1077#1088#1074#1077#1088#1091
+            '<b>'#1042#1074#1077#1076#1080#1090#1077' '#1087#1072#1088#1072#1084#1077#1090#1088#1099'</b><br />'#13#10'<b>+joinServer [address]</b> - '#1087 +
+            #1086#1076#1082#1083#1102#1095#1080#1090#1100#1089#1103' '#1082' '#1089#1077#1088#1074#1077#1088#1091',<br />'#13#10'<b>+playerName [account]</b> - '#1080#1084#1103 +
+            ' '#1072#1082#1082#1072#1091#1085#1090#1072',<br />'#13#10'<b>+playerPassword ['#1087#1072#1088#1086#1083#1100']</b> - '#1087#1072#1088#1086#1083#1100' '#1082' '#1072#1082#1082 +
+            #1072#1091#1085#1090#1091',<br />'#13#10#1080' '#1090'.'#1076'.'
           Margins.Left = 25
           Margins.Top = 0
           Margins.Right = 5
@@ -269,13 +320,17 @@ object FSettings: TFSettings
           BoundLabel.Layout = sclLeft
           BoundLabel.MaxWidth = 0
           BoundLabel.UseSkinColor = True
+          ExplicitWidth = 395
         end
-        object editPlayerName: TsEdit
+        object BF2_editPlayerName: TsEdit
           AlignWithMargins = True
           Left = 252
-          Top = 135
-          Width = 166
+          Top = 166
+          Width = 180
           Height = 21
+          Hint = 
+            '<b>'#1048#1084#1103' '#1072#1082#1082#1072#1091#1085#1090#1072'</b><br />'#1041#1091#1076#1077#1090' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100#1089#1103' '#1076#1083#1103' '#1072#1074#1090#1086#1084#1072#1090#1080#1095#1077#1089#1082#1086#1075 +
+            #1086'<br />'#1087#1086#1076#1082#1083#1102#1095#1077#1085#1080#1103' '#1082' '#1072#1082#1082#1072#1091#1085#1090#1091' Battlefield'
           Margins.Left = 250
           Margins.Top = 0
           Margins.Right = 5
@@ -303,13 +358,17 @@ object FSettings: TFSettings
           BoundLabel.Layout = sclLeft
           BoundLabel.MaxWidth = 0
           BoundLabel.UseSkinColor = True
+          ExplicitWidth = 170
         end
-        object editPlayerPassword: TsEdit
+        object BF2_editPlayerPassword: TsEdit
           AlignWithMargins = True
           Left = 252
-          Top = 161
-          Width = 166
+          Top = 192
+          Width = 180
           Height = 21
+          Hint = 
+            '<b>'#1055#1072#1088#1086#1083#1100' '#1082' '#1072#1082#1082#1072#1091#1085#1090#1091'</b><br />'#1041#1091#1076#1077#1090' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100#1089#1103' '#1076#1083#1103' '#1072#1074#1090#1086#1084#1072#1090#1080#1095 +
+            #1077#1089#1082#1086#1075#1086'<br />'#1087#1086#1076#1082#1083#1102#1095#1077#1085#1080#1103' '#1082' '#1072#1082#1082#1072#1091#1085#1090#1091' Battlefield'
           Margins.Left = 250
           Margins.Top = 0
           Margins.Right = 5
@@ -323,6 +382,7 @@ object FSettings: TFSettings
           Font.Style = []
           ParentFont = False
           ParentShowHint = False
+          PasswordChar = '*'
           ShowHint = True
           TabOrder = 4
           SkinData.SkinSection = 'EDIT'
@@ -337,6 +397,31 @@ object FSettings: TFSettings
           BoundLabel.Layout = sclLeft
           BoundLabel.MaxWidth = 0
           BoundLabel.UseSkinColor = True
+          ExplicitWidth = 170
+        end
+        object BF2_rbNotUseParams: TsRadioButton
+          AlignWithMargins = True
+          Left = 7
+          Top = 58
+          Width = 425
+          Height = 19
+          Hint = #1053#1077' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1087#1072#1088#1072#1084#1077#1090#1088#1099
+          Margins.Left = 5
+          Margins.Top = 5
+          Margins.Right = 5
+          Margins.Bottom = 5
+          Align = alTop
+          Caption = #1053#1077' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1087#1072#1088#1072#1084#1077#1090#1088#1099
+          Checked = True
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 5
+          TabStop = True
+          OnClick = settingsChangeParamsMethod
+          AutoSize = False
+          SkinData.SkinSection = 'RADIOBUTTON'
+          ShowFocus = False
+          ExplicitWidth = 415
         end
       end
     end
@@ -348,6 +433,10 @@ object FSettings: TFSettings
       ShowHint = False
       SkinData.CustomColor = False
       SkinData.CustomFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object pageCS: TsTabSheet
       Caption = 'Counter-Strike'
@@ -356,6 +445,10 @@ object FSettings: TFSettings
       ShowHint = False
       SkinData.CustomColor = False
       SkinData.CustomFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object pageWOW: TsTabSheet
       Caption = 'World of Warcraft'
@@ -364,6 +457,10 @@ object FSettings: TFSettings
       ShowHint = False
       SkinData.CustomColor = False
       SkinData.CustomFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
   end
   object sSkinProvider: TsSkinProvider
@@ -374,9 +471,9 @@ object FSettings: TFSettings
   end
   object sAlphaHints: TsAlphaHints
     Templates = <>
-    TemplateName = 'Win7'
     HTMLMode = True
     PauseHide = 50000
+    SkinSection = 'HINT'
     Left = 96
     Top = 552
   end

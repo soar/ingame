@@ -6,19 +6,20 @@ uses
     // Std
     Windows,        Messages,       Classes,        Graphics,
     Forms,          Menus,          SysUtils,       CoolTrayIcon,
-    Dialogs,        ImgList,        Controls,
+    Dialogs,        ImgList,        Controls,       XPMan,
     // Skin Support
-    sSkinManager,   sSkinProvider,  acAlphaImageList,
+    sSkinManager,   sSkinProvider,  acAlphaHints,   acAlphaImageList,
     // Self
-    vars,
+    UVars,
     WLauncher,      WSettings,      USettings,      UCmdLine,
-    ULocalization, acAlphaHints;
+    ULocalization,  UInstallation,  UCrypt,         UExceptions;
 
 type
     TFMain = class(TForm)
         // Поддержка скинов
         sSkinManager: TsSkinManager;
         sSkinProvider: TsSkinProvider;
+        sAlphaHints: TsAlphaHints;
 
         // Vcl
         trayIcon: TCoolTrayIcon;
@@ -33,11 +34,12 @@ type
                     mnGameBF2Run: TMenuItem;
                     mnGameBF2Settings: TMenuItem;
             mcSystem: TMenuItem;
+                mnGamesSettings: TMenuItem;
                 mnAbout: TMenuItem;
                 mnExit: TMenuItem;
-    sAlphaHints: TsAlphaHints;
 
         procedure ShowLauncher (Sender: TObject);
+        procedure ShowGamesSettings (Sender: TObject);
 
         procedure Quit (Sender: TObject);
         procedure GetMenuExtraLineData (FirstItem: TMenuItem; var SkinSection, Caption: string; var Glyph: TBitmap; var LineVisible: Boolean);
@@ -52,6 +54,8 @@ type
     end;
 
 var
+    ResLibrary: THandle;
+
     FMain:      TFMain;
 
     FLauncher:  TFLauncher;
@@ -60,6 +64,7 @@ var
     CLocalize:  TCLocalization;
     CSettings:  TCSettings;
     CCmdLine:   TCCmdLine;
+    CCrypt:     TCCrypt;
 
 implementation
 
@@ -71,6 +76,11 @@ constructor TFMain.Create (AOwner: TComponent);
 var
     Res: TResourceStream;
 begin
+    { TODO: Exception Handling in loading DLL }
+    ResLibrary := LoadLibrary ('InGameRes.dll');
+    if ResLibrary = 0 then
+        Exit;
+
     {$ifndef NoDFM}
         inherited Create (AOwner);
     {$else}
@@ -82,18 +92,25 @@ begin
     FMain.Width := 0;
     FMain.Height := 0;
 
+    // TODO: Create Crypt Module
+    // CCrypt := TCCrypt.Create;
     CSettings := TCSettings.Create;
 
     FLauncher := TFLauncher.Create (Self);
 
     FSettings := TFSettings.Create (Self);
-    FSettings.ShowModal;
+    // FSettings.ShowModal;
+
+    // TODO: StartUp Check
+    //if not StartedSuccessfully then
+    //    Quit (nil);
 end;
 
 //  Деструктор
 destructor TFMain.Destroy ();
 begin
     FreeAndNil (CSettings);
+    FreeLibrary (ResLibrary);
     inherited Destroy ();
 end;
 
@@ -109,9 +126,18 @@ begin
         else FLauncher.Show;
 end;
 
+procedure TFMain.ShowGamesSettings (Sender: TObject);
+begin
+    if (not FSettings.Showing)
+        then FSettings.Show
+        else FSettings.BringToFront;
+end;
+
 //  Выход из приложения
 procedure TFMain.Quit (Sender: TObject);
 begin
+    CSettings.SaveSettings;
+    //CSettings.SaveGamesSettings;
     Application.Terminate;
 end;
 

@@ -10,7 +10,8 @@ uses
 
     // Skin Support
     sSkinManager,   sStatusBar,     sSkinProvider,  acAlphaImageList,
-    sPanel,         acAlphaHints,   sSpeedButton,
+    sPanel,         acAlphaHints,   sSpeedButton,   sScrollBox,
+    sPageControl,
 
     // Self
     UCmdLine;
@@ -20,7 +21,7 @@ type
         // Skin Components
         sSkinProvider:  TsSkinProvider;
         sAlphaHints:    TsAlphaHints;
-        sStatusBar:     TsStatusBar;
+    stbrStatus: TsStatusBar;
 
         // Части дизайна
         pnlStart:       TsPanel;
@@ -28,6 +29,11 @@ type
         btnCOD4:        TsSpeedButton;
         btnCS:          TsSpeedButton;
         btnWoW:         TsSpeedButton;
+    pgctrlPages: TsPageControl;
+    tbshtNews: TsTabSheet;
+    tbshtServers: TsTabSheet;
+    tbshtUpdates: TsTabSheet;
+    scrlbxDownloads: TsScrollBox;
 
         // Эффекты сворачивания и разворачивания формы
         procedure FormCreate (Sender: TObject);
@@ -41,7 +47,7 @@ type
 implementation
 
 uses
-    WMain, USettings, Vars;
+    WMain, USettings, UVars, WDownload;
 
 {$ifndef NoDFM}{$R *.dfm}{$endif}
 
@@ -54,7 +60,13 @@ begin
 end;
 
 procedure TFLauncher.FormCreate (Sender: TObject);
+var
+    Tmp1: TFDownload;   i: Integer;
 begin
+    // Получение темплейтов из главной формы
+    sAlphaHints.Templates := FMain.sAlphaHints.Templates;
+    sAlphaHints.TemplateName := 'Win7';
+
     if ((CSettings.sLauncher.PositionLeft >= 0) and (CSettings.sLauncher.PositionTop >= 0)) then begin
         Left := CSettings.sLauncher.PositionLeft;
         Top  := CSettings.sLauncher.PositionTop;
@@ -63,6 +75,16 @@ begin
 
     { TODO : Добавить скрытие окна по необходимости }
     //if (not CSettings.sLauncher.ShowOnStart) then ShowWindow (Handle, SW_HIDE);
+
+    // TODO: Фреймы в гл. окне
+    for I := 0 to 10 do begin
+        Tmp1 := TFDownload.Create (Self);
+        Tmp1.Parent := scrlbxDownloads;
+        Tmp1.Name := 'Test' + IntToStr (i);
+        Tmp1.Align := alTop;
+        Tmp1.Visible := true;
+    end;
+
 end;
 
 procedure TFLauncher.FormShow (Sender: TObject);

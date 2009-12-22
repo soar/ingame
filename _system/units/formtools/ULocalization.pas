@@ -3,10 +3,10 @@ unit ULocalization;
 interface
 
 uses
-    { Self: }   Vars;
+    { Self: }   UVars;
 
 type
-    TCLangs = (tclRussian = 0, tclEnglish = 1);
+    TCLangs = (tclRussian, tclEnglish);
 
     TCLocalization = class (TObject)
     public
@@ -17,9 +17,6 @@ implementation
 
 uses
     { Self: }   WMain, USettings;
-
-resourcestring
-    settings_bf2_paramstring = 'test 222 222 222';
 
 { TCLocalization }
 

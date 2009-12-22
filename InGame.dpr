@@ -9,16 +9,19 @@ uses
     { PreCheck: }
     UOneInstance    in '_system\units\UOneInstance.pas',
 
-    { Vcl: } Forms, Windows, SysUtils,
+    { Vcl: } Forms, Windows, SysUtils,  
 
     { Self: }
     { NotObject: }
-    vars            in '_system\units\vars.pas',
+    UVars           in '_system\units\UVars.pas',
 
     { Forms: }
     WMain           in '_system\forms\WMain.pas' {FMain},
     WLauncher       in '_system\forms\WLauncher.pas' {FLauncher},
-    WSettings in '_system\forms\WSettings.pas' {FSettings},
+    WSettings       in '_system\forms\WSettings.pas' {FSettings},
+
+    { Frames: }
+    WDownload       in '_system\frames\WDownload.pas', {FDownload: TFrame}
 
     { Objects: }
     USettings       in '_system\units\USettings.pas',
@@ -26,7 +29,15 @@ uses
     UGraphic        in '_system\units\UGraphic.pas',
 
     { Common Functions: }
-    ULocalization   in '_system\units\formtools\ULocalization.pas';
+    ULocalization   in '_system\units\formtools\ULocalization.pas',
+    UInstallation   in '_system\units\UInstallation.pas',
+    UExceptions     in '_system\units\UExceptions.pas',
+
+    { Libraries }
+    UFileSystem     in '_system\utils\UFileSystem.pas',
+    USevenZip       in '_system\utils\USevenZip.pas',
+    UCrypt          in '_system\units\UCrypt.pas',
+    UCRC32          in '_system\utils\UCRC32.pas';
 
 {$else}{$region 'System Units'}
 uses
@@ -36,14 +47,21 @@ uses
   Messages,
   Dialogs,
   SysUtils,
-  vars in '_system\units\vars.pas',
+  UVars in '_system\units\UVars.pas',
   WMain in '_system\forms\WMain.pas' {FMain},
   WLauncher in '_system\forms\WLauncher.pas' {FLauncher},
   USettings in '_system\units\USettings.pas',
   UCmdLine in '_system\units\UCmdLine.pas',
   UGraphic in '_system\units\UGraphic.pas',
   WSettings in '_system\forms\WSettings.pas' {FSettings},
-  ULocalization in '_system\units\formtools\ULocalization.pas';
+  ULocalization in '_system\units\formtools\ULocalization.pas',
+  UFileSystem in '_system\utils\UFileSystem.pas',
+  USevenZip in '_system\utils\USevenZip.pas',
+  UInstallation in '_system\units\UInstallation.pas',
+  UCrypt in '_system\units\UCrypt.pas',
+  UCRC32 in '_system\utils\UCRC32.pas',
+  UExceptions in '_system\units\UExceptions.pas',
+  WDownload in '_system\frames\WDownload.pas' {FDownload: TFrame};
 
 {$endregion}{$endif}
 
@@ -83,7 +101,7 @@ begin
 
         // Создаем и прячем главную форму
         Application.CreateForm(TFMain, FMain);
-        ShowWindow (Application.Handle, SW_HIDE);
+        Windows.ShowWindow (Application.Handle, SW_HIDE);
 
         // Запуск главного цикла
         Application.Run;

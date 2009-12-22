@@ -4,7 +4,7 @@ object FMain: TFMain
   BorderIcons = [biSystemMenu]
   BorderStyle = bsNone
   Caption = 'InGame'
-  ClientHeight = 169
+  ClientHeight = 154
   ClientWidth = 625
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -3200,7 +3200,9 @@ object FMain: TFMain
     MenuSupport.ExtraLineFont.Height = -32
     MenuSupport.ExtraLineFont.Name = 'Impact'
     MenuSupport.ExtraLineFont.Style = [fsBold]
-    SkinDirectory = 'E:\[Development]\_Delphi\_Projects\InGame\builds\skins'
+    SkinDirectory = 
+      'E:\[Development]\_Delphi\_Projects\InGame (D2010)\builds\debug\S' +
+      'kins'
     SkinName = 'MainSkin'
     SkinInfo = '6.3'
     ThirdParty.ThirdEdits = ' '#13#10
@@ -3274,6 +3276,7 @@ object FMain: TFMain
   end
   object mainMenu: TPopupMenu
     Images = imgIconsX16
+    MenuAnimation = [maTopToBottom]
     Left = 152
     Top = 8
     object mcGames: TMenuItem
@@ -3292,6 +3295,11 @@ object FMain: TFMain
     object mcSystem: TMenuItem
       Caption = '-'#1057#1080#1089#1090#1077#1084#1072'-'
       Enabled = False
+    end
+    object mnGamesSettings: TMenuItem
+      Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080' '#1080#1075#1088
+      ShortCut = 49223
+      OnClick = ShowGamesSettings
     end
     object mnAbout: TMenuItem
       Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077

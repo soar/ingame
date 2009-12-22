@@ -4,7 +4,7 @@ interface
 
 uses
     { Vcl: }    Windows, SysUtils,
-    { Self: }   vars;
+    { Self: }   UVars;
 
 type
     TCCmdLine = class (TObject)

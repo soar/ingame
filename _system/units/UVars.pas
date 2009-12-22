@@ -1,41 +1,34 @@
-unit vars;
+unit UVars;
 
 interface
 
 type
-    // Информация об играх
-    TGameInfo1 = Record
-        fullGameName: string;
-
-        isInstalled:  boolean;
-
-        gamePath:     string;
-        version:      string;
-    end;
-
-    // Поддерживаемые игры (акронимы)
-    TGameList = Record
-        bf2:    TGameInfo1;
-        cod4:   TGameInfo1;
-        cs:     TGameInfo1;
-        wow:    TGameInfo1;
-    end;
-
     TCopyDataType = (cdtArray = 0);
+    TGames = (gamesBF2, gamesCOD4, gamesCS, gamesWOW);
+    Games = set of TGames;
 
 const
     // Уникальный ID
     programGUID = '{A3AECEB2-860B-49A5-BDA6-B191E48CFE48}';
 
-    // Имя файла настроек
-    settingsFileName = 'settings.ini';
+    // Модуль настроек
+    // Файл настроек
+    mSettings_iniMain = 'settings.ini';
+    // Файл с информацией об играх
+    mSettings_iniGames = 'games.ini';
 
-    // Имя файла с информацией об играх
-    gamesInfoFileName = 'games.ini';
+    // Модуль криптографии
+    // Файл ключей
+    mCrypt_keysDBFileName = 'keys.db';
+    // Размер файла ключей
+    mCrypt_keysFileSize = 64 * 1024;
+    // Адреса для получения ключей
+    offset_SettingsPasswords = $000100; // 32b to $00011F
 
     // Ветка с информацией в реестре
     regFolder = 'Software\SevGames.net';
     regInGameFolder = regFolder + '\InGame';
+
 
     // Информация о формах:
     // Главная форма приложения

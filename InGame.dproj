@@ -36,6 +36,8 @@
 			<DCC_Platform>x86</DCC_Platform>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_DependencyCheckOutputName>builds\release\InGame.exe</DCC_DependencyCheckOutputName>
+			<DCC_ExeOutput>builds\release\</DCC_ExeOutput>
 			<DCC_StringChecks>off</DCC_StringChecks>
 			<DCC_Description>InGame</DCC_Description>
 			<DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
@@ -50,6 +52,9 @@
 			<DCC_Define>NoDFM;$(DCC_Define)</DCC_Define>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_DependencyCheckOutputName>builds\debug\InGame.exe</DCC_DependencyCheckOutputName>
+			<DCC_ExeOutput>builds\debug\</DCC_ExeOutput>
+			<DCC_Optimize>false</DCC_Optimize>
 			<DCC_DebugDCUs>true</DCC_DebugDCUs>
 			<DCC_MapFile>3</DCC_MapFile>
 			<DCC_RangeChecking>true</DCC_RangeChecking>
@@ -63,7 +68,7 @@
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
 			<DCCReference Include="_system\units\UOneInstance.pas"/>
-			<DCCReference Include="_system\units\vars.pas"/>
+			<DCCReference Include="_system\units\UVars.pas"/>
 			<DCCReference Include="_system\forms\WMain.pas">
 				<Form>FMain</Form>
 			</DCCReference>
@@ -73,10 +78,20 @@
 			<DCCReference Include="_system\forms\WSettings.pas">
 				<Form>FSettings</Form>
 			</DCCReference>
+			<DCCReference Include="_system\frames\WDownload.pas">
+				<Form>FDownload</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
 			<DCCReference Include="_system\units\USettings.pas"/>
 			<DCCReference Include="_system\units\UCmdLine.pas"/>
 			<DCCReference Include="_system\units\UGraphic.pas"/>
 			<DCCReference Include="_system\units\formtools\ULocalization.pas"/>
+			<DCCReference Include="_system\units\UInstallation.pas"/>
+			<DCCReference Include="_system\units\UExceptions.pas"/>
+			<DCCReference Include="_system\utils\UFileSystem.pas"/>
+			<DCCReference Include="_system\utils\USevenZip.pas"/>
+			<DCCReference Include="_system\units\UCrypt.pas"/>
+			<DCCReference Include="_system\utils\UCRC32.pas"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
@@ -108,10 +123,10 @@
 					<VersionInfo>
 						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
 						<VersionInfo Name="AutoIncBuild">True</VersionInfo>
-						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MajorVer">2</VersionInfo>
 						<VersionInfo Name="MinorVer">0</VersionInfo>
-						<VersionInfo Name="Release">0</VersionInfo>
-						<VersionInfo Name="Build">84</VersionInfo>
+						<VersionInfo Name="Release">1</VersionInfo>
+						<VersionInfo Name="Build">260</VersionInfo>
 						<VersionInfo Name="Debug">False</VersionInfo>
 						<VersionInfo Name="PreRelease">True</VersionInfo>
 						<VersionInfo Name="Special">False</VersionInfo>
@@ -123,21 +138,21 @@
 					<VersionInfoKeys>
 						<VersionInfoKeys Name="CompanyName">SevStar, Inc. - http://sevstar.net</VersionInfoKeys>
 						<VersionInfoKeys Name="FileDescription">Утилита проекта SevGames.net - http://sevgames.net</VersionInfoKeys>
-						<VersionInfoKeys Name="FileVersion">1.0.0.84</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">2.0.1.260</VersionInfoKeys>
 						<VersionInfoKeys Name="LegalCopyright">Soar, http://soar.name</VersionInfoKeys>
 						<VersionInfoKeys Name="ProductName">InGame Tool</VersionInfoKeys>
-						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">2.0.1</VersionInfoKeys>
 						<VersionInfoKeys Name="Comments">Visit http://sevgames.net for more info</VersionInfoKeys>
 						<VersionInfoKeys Name="InternalName"/>
 						<VersionInfoKeys Name="LegalTrademarks"/>
 						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="LastCompiledTime">08.12.2009 11:38:44</VersionInfoKeys>
 					</VersionInfoKeys>
 					<Excluded_Packages>
-						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k120.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
-						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp120.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
-						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k120.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-						<Excluded_Packages Name="$(BDS)\bin\dclofficexp120.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-						<Excluded_Packages Name="$(BDS)\bin\dcltee8120.bpl">TeeChart Standard 8 Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k140.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp140.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k140.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp140.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
 					</Excluded_Packages>
 					<Source>
 						<Source Name="MainSource">InGame.dpr</Source>
